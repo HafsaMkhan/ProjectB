@@ -18,8 +18,7 @@ namespace WindowsFormsApp7
         {
             InitializeComponent();
         }
-        const string conStr = "Data Source=DESKTOP-2FD4D2N\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(conStr);
+        SqlConnection connection = new SqlConnection(Utility.conStr);
 
         public void modalClear()
         {
@@ -57,7 +56,7 @@ namespace WindowsFormsApp7
             {
                 lblEmail.Text = "Email is missing or invalid";
             }
-            else if (txtContact.Text == "" && Regex.IsMatch(txtContact.Text, @"^(([+]{1}[0-9]{2}|0)[0-9]{9})$"))
+            else if (txtContact.Text == "" || Regex.IsMatch(txtContact.Text, @"^(([+]{1}[0-9]{2}|0)[0-9]{9})$"))
             {
                 lblContact.Text = "Contact is missing or invalid";
             }
@@ -65,10 +64,10 @@ namespace WindowsFormsApp7
             {
                 lblRegister.Text = "Registration Number is missing or invalid";
             }
-            else if (Utility.status == "Edit")
+            else if (Utility.status == "Edit" && txtRegisterNo.Text != "")
             {
                 int stat = 5;
-                if (comboStatus.SelectedItem == "In Active")
+                if (comboStatus.SelectedItem.ToString() == "In Active")
                 {
                     stat = 6;
                 }

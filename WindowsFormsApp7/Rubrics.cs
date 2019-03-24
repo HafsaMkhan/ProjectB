@@ -17,8 +17,7 @@ namespace WindowsFormsApp7
         {
             InitializeComponent();
         }
-        const string conStr = "Data Source=DESKTOP-2FD4D2N\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(conStr);
+        SqlConnection connection = new SqlConnection(Utility.conStr);
 
         private void Rubrics_Load(object sender, EventArgs e)
         {
@@ -85,7 +84,7 @@ namespace WindowsFormsApp7
                     this.rubricTableAdapter.Fill(this.projectBDataSet.Rubric);
                 }
             }
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Edit")
+            else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Edit")
             {
                 btnAddRubric.Text = "Edit Rubric";
                 RubricId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -98,7 +97,32 @@ namespace WindowsFormsApp7
                     txtRubricDetail.Text = read["Details"].ToString();
                 }
                 connection.Close();
+                
+                int cloId= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Clo WHERE Id='" + cloId + "' ", connection);
+                SqlDataReader read1 = cmd.ExecuteReader();
+                while (read1.Read())
+                {
+
+                    comboClo.DisplayMember = read1["Name"].ToString();
+                    comboClo.SelectedValue = read1["Id"].ToString();
+                }
+                connection.Close();
+                
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RubricLevel rubricLevel = new RubricLevel();
+            rubricLevel.Show();
+        }
+
+        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            pictureBox1.Tag = "Click here to add levels";
         }
     }
 }

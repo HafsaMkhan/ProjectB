@@ -8,6 +8,8 @@ namespace WindowsFormsApp7
 {
     class Utility
     {
+        public const string conStr = "Data Source=DESKTOP-2FD4D2N\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
+        public static Boolean alter = false;
         public static int StudentId=0;
         public static string status = "";
     }

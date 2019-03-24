@@ -17,8 +17,7 @@ namespace WindowsFormsApp7
         {
             InitializeComponent();
         }
-        const string conStr = "Data Source=DESKTOP-2FD4D2N\\SQLEXPRESS;Initial Catalog=ProjectB;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(conStr);
+        SqlConnection connection = new SqlConnection(Utility.conStr);
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -63,6 +62,7 @@ namespace WindowsFormsApp7
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 this.cloTableAdapter.Fill(this.projectBDataSet.Clo);
+                txtCLO.Text = "";
             }
         }
 
@@ -81,20 +81,14 @@ namespace WindowsFormsApp7
                 //Display confirmation msg for delete
                 if (MessageBox.Show("Do you want to delete " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //Deleting corresponding Rubric to CLO
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Rubric WHERE CloId  = '" + clo_Id + "'", connection);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    //Deleting Clo
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("DELETE FROM Clo WHERE Id  = '" + clo_Id + "'", connection);
+                    SqlCommand command = new SqlCommand("DELETE FROM Clo WHERE Clo.Id = '" + clo_Id + "'", connection);
                     command.ExecuteNonQuery();
                     connection.Close();
                     this.cloTableAdapter.Fill(this.projectBDataSet.Clo);
                 }
             }
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Edit")
+            else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Edit")
             {
                 //Mapping CLO data to be edited in text box
                 button1.Text = "Edit CLO";

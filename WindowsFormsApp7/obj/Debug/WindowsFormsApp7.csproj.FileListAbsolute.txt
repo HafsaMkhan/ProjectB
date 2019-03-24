@@ -12,3 +12,5 @@ C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFor
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.ProjectB.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Clo_Rubric.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Rubrics.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.RubricLevel.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Attendance.resources
