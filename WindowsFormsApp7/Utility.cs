@@ -12,5 +12,6 @@ namespace WindowsFormsApp7
         public static Boolean alter = false;
         public static int StudentId=0;
         public static string status = "";
+        public static string attendanceStatus="Add";
     }
 }

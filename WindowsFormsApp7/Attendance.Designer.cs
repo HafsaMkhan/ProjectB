@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attendance));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attend = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnMarkAttendance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +70,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("MS Reference Specialty", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("NewsGoth BT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 141);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -73,22 +79,77 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(110, 205);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.regNo,
+            this.Name,
+            this.attend});
+            this.dataGridView1.Location = new System.Drawing.Point(61, 182);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(462, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 290);
             this.dataGridView1.TabIndex = 28;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // regNo
+            // 
+            this.regNo.DataPropertyName = "RegistrationNumber";
+            this.regNo.HeaderText = "Registration Number";
+            this.regNo.MinimumWidth = 125;
+            this.regNo.Name = "regNo";
+            this.regNo.ReadOnly = true;
+            this.regNo.Width = 125;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Full Name";
+            this.Name.MinimumWidth = 200;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 200;
+            // 
+            // attend
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attend.DefaultCellStyle = dataGridViewCellStyle2;
+            this.attend.HeaderText = "Attendance Status";
+            this.attend.MaxDropDownItems = 4;
+            this.attend.MinimumWidth = 175;
+            this.attend.Name = "attend";
+            this.attend.Width = 175;
+            // 
+            // btnMarkAttendance
+            // 
+            this.btnMarkAttendance.Font = new System.Drawing.Font("News701 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkAttendance.ForeColor = System.Drawing.Color.Black;
+            this.btnMarkAttendance.Location = new System.Drawing.Point(394, 505);
+            this.btnMarkAttendance.Name = "btnMarkAttendance";
+            this.btnMarkAttendance.Size = new System.Drawing.Size(210, 38);
+            this.btnMarkAttendance.TabIndex = 36;
+            this.btnMarkAttendance.Text = "Mark Attendance";
+            this.btnMarkAttendance.UseVisualStyleBackColor = true;
+            this.btnMarkAttendance.Click += new System.EventHandler(this.btnMarkAttendance_Click);
             // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 555);
+            this.Controls.Add(this.btnMarkAttendance);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "Attendance";
+            //this.Name = "Attendance";
             this.Text = "Attendance";
             this.Load += new System.EventHandler(this.Attendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -104,5 +165,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnMarkAttendance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewComboBoxColumn attend;
     }
 }
