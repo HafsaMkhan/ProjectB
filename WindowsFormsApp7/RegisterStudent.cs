@@ -152,5 +152,14 @@ namespace WindowsFormsApp7
         {
 
         }
+
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if(!Char.IsDigit(c) && c!=8 && c != 46)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

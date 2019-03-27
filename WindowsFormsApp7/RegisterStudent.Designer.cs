@@ -96,6 +96,7 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(178, 28);
             this.txtContact.TabIndex = 4;
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
             // txtEmail
             // 
@@ -292,6 +293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ControlBox = false;
             this.Controls.Add(this.comboStatus);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);

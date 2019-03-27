@@ -14,3 +14,6 @@ C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFor
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Rubrics.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.RubricLevel.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Attendance.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Assesment.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.AssessmentComponent.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Result.resources

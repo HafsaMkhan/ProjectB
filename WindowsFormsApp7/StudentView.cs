@@ -83,5 +83,19 @@ namespace WindowsFormsApp7
             Attendance attendance = new Attendance();
             attendance.Show();
         }
+
+        private void btnAssessment_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Assesment assesment = new Assesment();
+            assesment.Show();
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Result result = new Result();
+            result.Show();
+        }
     }
 }

@@ -48,6 +48,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnResult = new System.Windows.Forms.PictureBox();
+            this.btnAssessment = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
@@ -55,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAssessment)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -196,7 +200,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(680, 95);
+            this.pictureBox1.Location = new System.Drawing.Point(587, 95);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 41);
             this.pictureBox1.TabIndex = 16;
@@ -221,12 +225,37 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(745, 95);
+            this.pictureBox3.Location = new System.Drawing.Point(652, 95);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(49, 41);
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // btnResult
+            // 
+            this.btnResult.BackColor = System.Drawing.Color.Transparent;
+            this.btnResult.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnResult.BackgroundImage")));
+            this.btnResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnResult.Image = ((System.Drawing.Image)(resources.GetObject("btnResult.Image")));
+            this.btnResult.Location = new System.Drawing.Point(783, 95);
+            this.btnResult.Name = "btnResult";
+            this.btnResult.Size = new System.Drawing.Size(49, 41);
+            this.btnResult.TabIndex = 20;
+            this.btnResult.TabStop = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
+            // 
+            // btnAssessment
+            // 
+            this.btnAssessment.BackColor = System.Drawing.Color.Transparent;
+            this.btnAssessment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAssessment.BackgroundImage")));
+            this.btnAssessment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAssessment.Location = new System.Drawing.Point(718, 95);
+            this.btnAssessment.Name = "btnAssessment";
+            this.btnAssessment.Size = new System.Drawing.Size(49, 41);
+            this.btnAssessment.TabIndex = 19;
+            this.btnAssessment.TabStop = false;
+            this.btnAssessment.Click += new System.EventHandler(this.btnAssessment_Click);
             // 
             // StudentView
             // 
@@ -234,6 +263,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(865, 466);
+            this.Controls.Add(this.btnResult);
+            this.Controls.Add(this.btnAssessment);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -250,6 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAssessment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +306,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnResult;
+        private System.Windows.Forms.PictureBox btnAssessment;
     }
 }

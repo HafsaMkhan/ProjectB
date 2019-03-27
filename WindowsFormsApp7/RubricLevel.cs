@@ -81,13 +81,7 @@ namespace WindowsFormsApp7
 
         private void txtMeasurementLevel_TextChanged(object sender, EventArgs e)
         {
-            int Number;
-            if (txtMeasurementLevel.Text==""){}
-            else if(!(int.TryParse(txtMeasurementLevel.Text,out Number)))
-            {
-                MessageBox.Show("Invalid input");
-                txtMeasurementLevel.Text = "";
-            }
+
         }
         int RubricLevelId;
         private void dataRubricLevel_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -130,6 +124,16 @@ namespace WindowsFormsApp7
 
                 }
                 connection.Close();
+            }
+        }
+
+        private void txtMeasurementLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && number != 8 && number != 46)
+            {
+                e.Handled = true;
             }
         }
     }

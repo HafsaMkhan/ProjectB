@@ -60,7 +60,7 @@ namespace WindowsFormsApp7
                 if (Att_id != -1)
                 {
                     string abc = "Select Student.Id as Id, Student.RegistrationNumber as RegistrationNumber, " +
-                        "CONCAT(Student.FirstName,' ',Student.LastName) as Name, StudentAttendance.AttendanceId as attend " +
+                        "CONCAT(Student.FirstName,' ',Student.LastName) as Name, StudentAttendance.AttendanceId " +
                         "from Student INNER JOIN StudentAttendance ON Id=StudentAttendance.StudentId " +
                         "where AttendanceId='" + Att_id + "'";
                     SqlCommand cmx = new SqlCommand(abc, connection);
@@ -146,6 +146,11 @@ namespace WindowsFormsApp7
                 StudentView studentView = new StudentView();
                 studentView.Show();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
