@@ -17,3 +17,6 @@ C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFor
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Assesment.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.AssessmentComponent.resources
 C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Result.resources
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\itextsharp.dll
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\itextsharp.xml
+C:\Users\MOD\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.csproj.CopyComplete

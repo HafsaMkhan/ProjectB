@@ -35,8 +35,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboAssessment = new System.Windows.Forms.ComboBox();
-            this.projectBDataSet = new WindowsFormsApp7.ProjectBDataSet();
             this.assessmentComponentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSet = new WindowsFormsApp7.ProjectBDataSet();
             this.assessmentComponentTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.AssessmentComponentTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.comboStudent = new System.Windows.Forms.ComboBox();
@@ -44,27 +44,28 @@
             this.studentTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.StudentTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.comboRubric = new System.Windows.Forms.ComboBox();
+            this.rubricLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.studentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentResultTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.StudentResultTableAdapter();
-            this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assessmentComponentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rubricMeasurementIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evaluationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.rubricLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rubricLevelTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.RubricLevelTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
+            this.studentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assessmentComponentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rubricMeasurementId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evaluationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -118,15 +119,15 @@
             this.comboAssessment.TabIndex = 53;
             this.comboAssessment.ValueMember = "Id";
             // 
-            // projectBDataSet
-            // 
-            this.projectBDataSet.DataSetName = "ProjectBDataSet";
-            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // assessmentComponentBindingSource
             // 
             this.assessmentComponentBindingSource.DataMember = "AssessmentComponent";
             this.assessmentComponentBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // projectBDataSet
+            // 
+            this.projectBDataSet.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // assessmentComponentTableAdapter
             // 
@@ -191,6 +192,11 @@
             this.comboRubric.TabIndex = 57;
             this.comboRubric.ValueMember = "Id";
             // 
+            // rubricLevelBindingSource
+            // 
+            this.rubricLevelBindingSource.DataMember = "RubricLevel";
+            this.rubricLevelBindingSource.DataSource = this.projectBDataSet;
+            // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("News701 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,15 +216,16 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentIdDataGridViewTextBoxColumn,
-            this.assessmentComponentIdDataGridViewTextBoxColumn,
-            this.rubricMeasurementIdDataGridViewTextBoxColumn,
+            this.studentId,
+            this.assessmentComponentId,
+            this.rubricMeasurementId,
             this.evaluationDateDataGridViewTextBoxColumn,
             this.Edit,
             this.Delete});
             this.dataGridView1.DataSource = this.studentResultBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(429, 168);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(70, 50, 70, 30);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(488, 225);
@@ -234,31 +241,66 @@
             // 
             this.studentResultTableAdapter.ClearBeforeFill = true;
             // 
-            // studentIdDataGridViewTextBoxColumn
+            // rubricLevelTableAdapter
             // 
-            this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
-            this.studentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rubricLevelTableAdapter.ClearBeforeFill = true;
             // 
-            // assessmentComponentIdDataGridViewTextBoxColumn
+            // dateTimePicker1
             // 
-            this.assessmentComponentIdDataGridViewTextBoxColumn.DataPropertyName = "AssessmentComponentId";
-            this.assessmentComponentIdDataGridViewTextBoxColumn.HeaderText = "AssessmentComponentId";
-            this.assessmentComponentIdDataGridViewTextBoxColumn.Name = "assessmentComponentIdDataGridViewTextBoxColumn";
-            this.assessmentComponentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(179, 341);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
+            this.dateTimePicker1.TabIndex = 61;
             // 
-            // rubricMeasurementIdDataGridViewTextBoxColumn
+            // lblDate
             // 
-            this.rubricMeasurementIdDataGridViewTextBoxColumn.DataPropertyName = "RubricMeasurementId";
-            this.rubricMeasurementIdDataGridViewTextBoxColumn.HeaderText = "RubricMeasurementId";
-            this.rubricMeasurementIdDataGridViewTextBoxColumn.Name = "rubricMeasurementIdDataGridViewTextBoxColumn";
-            this.rubricMeasurementIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDate.Font = new System.Drawing.Font("News701 BT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(40, 338);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(62, 25);
+            this.lblDate.TabIndex = 62;
+            this.lblDate.Text = "Date";
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.Font = new System.Drawing.Font("News701 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.ForeColor = System.Drawing.Color.Black;
+            this.btnPdf.Location = new System.Drawing.Point(739, 400);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(178, 38);
+            this.btnPdf.TabIndex = 63;
+            this.btnPdf.Text = "Create PDF";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
+            // studentId
+            // 
+            this.studentId.DataPropertyName = "StudentId";
+            this.studentId.HeaderText = "Student ID";
+            this.studentId.Name = "studentId";
+            this.studentId.ReadOnly = true;
+            // 
+            // assessmentComponentId
+            // 
+            this.assessmentComponentId.DataPropertyName = "AssessmentComponentId";
+            this.assessmentComponentId.HeaderText = "Assessment Component";
+            this.assessmentComponentId.Name = "assessmentComponentId";
+            this.assessmentComponentId.ReadOnly = true;
+            // 
+            // rubricMeasurementId
+            // 
+            this.rubricMeasurementId.DataPropertyName = "RubricMeasurementId";
+            this.rubricMeasurementId.HeaderText = "Rubric Measurement";
+            this.rubricMeasurementId.Name = "rubricMeasurementId";
+            this.rubricMeasurementId.ReadOnly = true;
             // 
             // evaluationDateDataGridViewTextBoxColumn
             // 
             this.evaluationDateDataGridViewTextBoxColumn.DataPropertyName = "EvaluationDate";
-            this.evaluationDateDataGridViewTextBoxColumn.HeaderText = "EvaluationDate";
+            this.evaluationDateDataGridViewTextBoxColumn.HeaderText = "Evaluation Date";
             this.evaluationDateDataGridViewTextBoxColumn.Name = "evaluationDateDataGridViewTextBoxColumn";
             this.evaluationDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -285,40 +327,13 @@
             this.Delete.ToolTipText = "Click to delete level";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
-            // rubricLevelBindingSource
-            // 
-            this.rubricLevelBindingSource.DataMember = "RubricLevel";
-            this.rubricLevelBindingSource.DataSource = this.projectBDataSet;
-            // 
-            // rubricLevelTableAdapter
-            // 
-            this.rubricLevelTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 341);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
-            this.dateTimePicker1.TabIndex = 61;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDate.Font = new System.Drawing.Font("News701 BT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(40, 338);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(62, 25);
-            this.lblDate.TabIndex = 62;
-            this.lblDate.Text = "Date";
-            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
@@ -335,12 +350,12 @@
             this.Text = "Result";
             this.Load += new System.EventHandler(this.Result_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,15 +380,16 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource studentResultBindingSource;
         private ProjectBDataSetTableAdapters.StudentResultTableAdapter studentResultTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentComponentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rubricMeasurementIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.BindingSource rubricLevelBindingSource;
         private ProjectBDataSetTableAdapters.RubricLevelTableAdapter rubricLevelTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentComponentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rubricMeasurementId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }
