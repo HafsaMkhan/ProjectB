@@ -67,6 +67,12 @@
     <Compile Include="Attendance.Designer.cs">
       <DependentUpon>Attendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceView.Designer.cs">
+      <DependentUpon>AttendanceView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clo_Rubric.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceView.resx">
+      <DependentUpon>AttendanceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clo_Rubric.resx">
       <DependentUpon>Clo_Rubric.cs</DependentUpon>

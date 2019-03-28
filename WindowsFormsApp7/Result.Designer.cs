@@ -47,18 +47,19 @@
             this.rubricLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentResultTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.StudentResultTableAdapter();
-            this.rubricLevelTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.RubricLevelTableAdapter();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.btnPdf = new System.Windows.Forms.Button();
             this.studentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assessmentComponentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rubricMeasurementId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.studentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentResultTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.StudentResultTableAdapter();
+            this.rubricLevelTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.RubricLevelTableAdapter();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -232,50 +234,6 @@
             this.dataGridView1.TabIndex = 60;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // studentResultBindingSource
-            // 
-            this.studentResultBindingSource.DataMember = "StudentResult";
-            this.studentResultBindingSource.DataSource = this.projectBDataSet;
-            // 
-            // studentResultTableAdapter
-            // 
-            this.studentResultTableAdapter.ClearBeforeFill = true;
-            // 
-            // rubricLevelTableAdapter
-            // 
-            this.rubricLevelTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 341);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
-            this.dateTimePicker1.TabIndex = 61;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDate.Font = new System.Drawing.Font("News701 BT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(40, 338);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(62, 25);
-            this.lblDate.TabIndex = 62;
-            this.lblDate.Text = "Date";
-            // 
-            // btnPdf
-            // 
-            this.btnPdf.Font = new System.Drawing.Font("News701 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPdf.ForeColor = System.Drawing.Color.Black;
-            this.btnPdf.Location = new System.Drawing.Point(739, 400);
-            this.btnPdf.Name = "btnPdf";
-            this.btnPdf.Size = new System.Drawing.Size(178, 38);
-            this.btnPdf.TabIndex = 63;
-            this.btnPdf.Text = "Create PDF";
-            this.btnPdf.UseVisualStyleBackColor = true;
-            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
-            // 
             // studentId
             // 
             this.studentId.DataPropertyName = "StudentId";
@@ -327,12 +285,68 @@
             this.Delete.ToolTipText = "Click to delete level";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
+            // studentResultBindingSource
+            // 
+            this.studentResultBindingSource.DataMember = "StudentResult";
+            this.studentResultBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // studentResultTableAdapter
+            // 
+            this.studentResultTableAdapter.ClearBeforeFill = true;
+            // 
+            // rubricLevelTableAdapter
+            // 
+            this.rubricLevelTableAdapter.ClearBeforeFill = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(179, 341);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
+            this.dateTimePicker1.TabIndex = 61;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDate.Font = new System.Drawing.Font("News701 BT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(40, 338);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(62, 25);
+            this.lblDate.TabIndex = 62;
+            this.lblDate.Text = "Date";
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.Font = new System.Drawing.Font("News701 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.ForeColor = System.Drawing.Color.Black;
+            this.btnPdf.Location = new System.Drawing.Point(612, 400);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(305, 38);
+            this.btnPdf.TabIndex = 63;
+            this.btnPdf.Text = "Generate Student Result";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(906, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 64;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.dateTimePicker1);
@@ -356,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

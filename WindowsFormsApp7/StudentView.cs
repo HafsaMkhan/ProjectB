@@ -80,7 +80,7 @@ namespace WindowsFormsApp7
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Attendance attendance = new Attendance();
+            AttendanceView attendance = new AttendanceView();
             attendance.Show();
         }
 

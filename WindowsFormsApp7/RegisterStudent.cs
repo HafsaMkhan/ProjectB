@@ -161,5 +161,10 @@ namespace WindowsFormsApp7
                 e.Handled = true;
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

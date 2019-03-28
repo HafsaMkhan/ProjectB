@@ -79,9 +79,15 @@ namespace WindowsFormsApp7
                 cmd10.ExecuteNonQuery(); cmd11.ExecuteNonQuery(); cmd12.ExecuteNonQuery(); cmd13.ExecuteNonQuery();
                 cmd14.ExecuteNonQuery(); cmd15.ExecuteNonQuery();
                 sqlConnection.Close();
+                
                 Utility.alter = true;
             }
             
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

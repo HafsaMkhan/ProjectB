@@ -129,6 +129,11 @@ namespace WindowsFormsApp7
             AssessmentComponent assesment = new AssessmentComponent();
             assesment.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

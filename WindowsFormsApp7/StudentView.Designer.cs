@@ -263,6 +263,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(865, 466);
+            this.ControlBox = false;
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.btnAssessment);
             this.Controls.Add(this.pictureBox3);

@@ -57,10 +57,11 @@ namespace WindowsFormsApp7
                 this.attend.ValueMember = "LookupId";
                 this.attend.DataSource = dtt;
                 connection.Close();
-                if (Att_id != -1)
+                if (Att_id != -1 )
                 {
                     string abc = "Select Student.Id as Id, Student.RegistrationNumber as RegistrationNumber, " +
-                        "CONCAT(Student.FirstName,' ',Student.LastName) as Name, StudentAttendance.AttendanceId " +
+                        "CONCAT(Student.FirstName,' ',Student.LastName) as Name, StudentAttendance.AttendanceId, " +
+                        "StudentAttendance.AttendanceStatus as AttendanceStatus " +
                         "from Student INNER JOIN StudentAttendance ON Id=StudentAttendance.StudentId " +
                         "where AttendanceId='" + Att_id + "'";
                     SqlCommand cmx = new SqlCommand(abc, connection);
@@ -151,6 +152,11 @@ namespace WindowsFormsApp7
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

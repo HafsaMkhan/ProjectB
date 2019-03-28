@@ -124,6 +124,11 @@ namespace WindowsFormsApp7
         {
             pictureBox1.Tag = "Click here to add levels";
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
