@@ -70,8 +70,8 @@ namespace WindowsFormsApp7
                 SqlCommand cmd13 = new SqlCommand("ALTER TABLE [dbo].[StudentResult]  WITH CHECK ADD  CONSTRAINT [FK_StudentResult_RubricLevel] FOREIGN KEY([RubricMeasurementId]) REFERENCES [dbo].[RubricLevel] ([Id]) ON DELETE CASCADE", sqlConnection);
                 SqlCommand cmd14 = new SqlCommand("ALTER TABLE [dbo].[StudentResult] DROP CONSTRAINT [FK_StudentResult_Student]", sqlConnection);
                 SqlCommand cmd15 = new SqlCommand("ALTER TABLE [dbo].[StudentResult]  WITH CHECK ADD  CONSTRAINT [FK_StudentResult_Student] FOREIGN KEY([StudentId]) REFERENCES[dbo].[Student]([Id]) ON DELETE CASCADE", sqlConnection);
-                sql.ExecuteNonQuery();
-                sqlCmd.ExecuteNonQuery();
+                //sql.ExecuteNonQuery();
+                //sqlCmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
                 cmd1.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();

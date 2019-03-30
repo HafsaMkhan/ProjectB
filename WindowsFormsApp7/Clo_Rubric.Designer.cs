@@ -47,6 +47,7 @@
             this.projectBDataSet = new WindowsFormsApp7.ProjectBDataSet();
             this.cloTableAdapter = new WindowsFormsApp7.ProjectBDataSetTableAdapters.CloTableAdapter();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnCloResult = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
@@ -224,12 +225,24 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // btnCloResult
+            // 
+            this.btnCloResult.Font = new System.Drawing.Font("News701 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloResult.Location = new System.Drawing.Point(506, 425);
+            this.btnCloResult.Name = "btnCloResult";
+            this.btnCloResult.Size = new System.Drawing.Size(228, 28);
+            this.btnCloResult.TabIndex = 39;
+            this.btnCloResult.Text = "Generate CLO Report";
+            this.btnCloResult.UseVisualStyleBackColor = true;
+            this.btnCloResult.Click += new System.EventHandler(this.btnCloResult_Click);
+            // 
             // Clo_Rubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 465);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCloResult);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -270,5 +283,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnCloResult;
     }
 }

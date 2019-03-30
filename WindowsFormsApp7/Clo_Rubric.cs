@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace WindowsFormsApp7
 {
@@ -112,6 +115,50 @@ namespace WindowsFormsApp7
         {
             this.Close();
 
+        }
+
+        private void btnCloResult_Click(object sender, EventArgs e)
+        {
+            Document document = new Document(iTextSharp.text.PageSize.LETTER, 10, 20, 42, 35);
+            PdfWriter pdfWriter = PdfWriter.GetInstance(document, new FileStream("CloReport.pdf", FileMode.Create));
+            document.Open();
+            PdfPTable table = new PdfPTable(3);
+            string[] list = { "Component", "Rubric", "Component Marks" };
+            for (int i = 0; i < 3; i++)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(list[i]));
+                cell.Colspan = 1;
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                table.AddCell(cell);
+            }
+            connection.Open();
+            foreach (DataGridViewRow row in dataGridView1.Rows) 
+            {
+                int ab = -1;
+                int Clo_Id = Convert.ToInt32(row.Cells["idDataGridViewTextBoxColumn"].Value);
+                SqlCommand q = new SqlCommand("Select MAX(RubricLevel.MeasurementLevel) as ml /*, Rubric.Details as detail */" +
+                    "From RubricLevel INNER JOIN Rubric ON  RubricLevel.RubricId=Rubric.Id INNER JOIN Clo ON " +
+                    "Clo.Id=Rubric.CloId WHERE Clo.Id='"+Clo_Id+"'", connection);
+                SqlDataReader dataReader = q.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(row.Cells[1].Value.ToString()));
+                    cell.Colspan = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(cell); PdfPCell cell1 = new PdfPCell(new Phrase("Rubric"));
+                    cell.Colspan = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(cell1);
+                    PdfPCell cell2 = new PdfPCell(new Phrase(dataReader["ml"].ToString()));
+                    cell.Colspan = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(cell2);
+                }
+                dataReader.Close();
+            }
+            document.Add(table);
+            document.Close();
+            connection.Close();
         }
     }
 }
